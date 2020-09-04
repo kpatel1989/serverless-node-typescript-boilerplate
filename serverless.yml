@@ -1,0 +1,18 @@
+service:
+  name: payroll-system
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+functions:
+  hello:
+    handler: src/main/handler.hello
+    events:
+      - http:
+          method: get
+          path: hello
